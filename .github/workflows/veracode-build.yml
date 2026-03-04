@@ -78,7 +78,7 @@ jobs:
             token: ${{ github.event.client_payload.token }}
             appname: ${{ github.event.client_payload.user_config.profile_name }}
             source_repository: ${{ github.event.client_payload.repository.full_name }}
-            check_run_id: ${{ github.run_id }}
+            check_run_id: ${{ github.event.client_payload.check_run_id }}
             check_run_name: ${{ github.workflow }}
             head_sha: ${{ github.event.client_payload.sha }}
             event_type: ${{ github.event.client_payload.event_type }}
