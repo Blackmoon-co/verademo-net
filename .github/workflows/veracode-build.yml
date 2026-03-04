@@ -21,8 +21,6 @@ jobs:
     - name: Build and Publish
       run: |
         set -e
-
-        echo "🔎 Searching for .csproj..."
         csproj_file=$(find . -name "*.csproj" -print -quit)
 
         if [ -z "$csproj_file" ]; then
