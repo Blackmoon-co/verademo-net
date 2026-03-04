@@ -13,7 +13,8 @@ veracode_static_scan:
       - synchronize
     target_branch:
       - "main"
-
+  
+  analysis_branch: 'main'
   analysis_on_platform: true
   break_build_policy_findings: true
   break_build_invalid_policy: true
