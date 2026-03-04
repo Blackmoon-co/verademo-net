@@ -5,7 +5,6 @@ veracode_static_scan:
     trigger: true
     branches_to_run:
       - "feature/**"
-      - "main"
 
   pull_request:
     trigger: true
