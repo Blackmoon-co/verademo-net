@@ -1,9 +1,11 @@
 veracode_static_scan:
+  use_custom_workflow: veracode-build
   artifact_file: veracode-artifact
 
   push:
     trigger: true
     branches_to_run:
+      - main
       - "feature/**"
 
   pull_request:
@@ -15,11 +17,11 @@ veracode_static_scan:
       - "main"
 
   analysis_branch: main
-  analysis_on_platform: false
+  analysis_on_platform: true
 
-  break_build_policy_findings: false
-  break_build_invalid_policy: false
-  break_build_on_error: false
+  break_build_policy_findings: true
+  break_build_invalid_policy: true
+  break_build_on_error: true
   policy: "Veracode Recommended Medium + SCA"
 
 
@@ -27,6 +29,7 @@ veracode_sca_scan:
   push:
     trigger: true
     branches_to_run:
+      - main
       - "feature/**"
 
   break_build_on_error: true
@@ -35,10 +38,11 @@ veracode_sca_scan:
 
 veracode_iac_secrets_scan:
   push:
-      trigger: true
-      branches_to_run:
-        - "feature/**"
-  
+    trigger: true
+    branches_to_run:
+      - main
+      - "feature/**"
+
   pull_request:
     trigger: true
     action:
