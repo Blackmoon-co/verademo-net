@@ -5,7 +5,6 @@ veracode_static_scan:
   push:
     trigger: true
     branches_to_run:
-      - main
       - "feature/**"
 
   pull_request:
@@ -29,7 +28,6 @@ veracode_sca_scan:
   push:
     trigger: true
     branches_to_run:
-      - main
       - "feature/**"
 
   break_build_on_error: true
@@ -40,7 +38,6 @@ veracode_iac_secrets_scan:
   push:
     trigger: true
     branches_to_run:
-      - main
       - "feature/**"
 
   pull_request:

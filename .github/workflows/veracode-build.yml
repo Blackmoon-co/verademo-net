@@ -31,7 +31,7 @@ jobs:
         fi
         rm -rf veracode-upload app.zip
 
-        dotnet publish "$csproj_file" -c Release -o ./veracode-upload --no-self-contained
+        dotnet publish "$csproj_file" -c Debug -o ./veracode-upload --p:UseAppHost=false
 
         ls -R ./veracode-upload
         cd veracode-upload
